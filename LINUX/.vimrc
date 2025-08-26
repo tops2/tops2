@@ -1,10 +1,20 @@
+"*******************************************************************************
+"* # HISTORY
+" 2025/08/26 - DPENG
+" - Just discovered `set mouse=a` for mouse mode!
+" - Align Mac vs Linux .vimrc
+"
+"
+"*******************************************************************************
+
+
 "* Enables VIM "advanced" functions if not enabled before.
 if &compatible
     set nocompatible
 endif
 
 "******** EDITOR SETTINGS
-set modeline                      "* Allows file specific "vimrc" settings.
+"set modeline                      "* Allows file specific "vimrc" settings.
 "set modeliens=5                   "* Specifies how many lines for settings.
 "set mouse=                        "* FOR RPI. ("normal" mouse behavior in Raspberry Pi)
 set ignorecase                    "* Ignores case searches.
@@ -28,7 +38,6 @@ set expandtab                     "* Expands tabs into spaces
 
 
 "******** DISPLAY SETTINGS
-syn on                             "* Syntax highlighting
 set number                         "* Shows line numbers
 set title                          "* Show file in titlebar
 highlight LineNr ctermfg=red       "* Changes VIM line number from yellow to red (more legible in terminal; can use any color aside from red)
@@ -36,6 +45,7 @@ set scrolloff=1                    "* 1 lines above/below cursor when scrolling
 
 "colorscheme=peachpuff              "* neovim with solarized light (ish)
 "colorscheme=morning                "* neovim with solarized light (ish)
+
 
 "******** Status line
 set laststatus=2
@@ -59,7 +69,6 @@ else
         set gfn=-adobe-courier-medium-r-normal-*-*-120-*-*-m-*-iso8859-1
     endif
 endif
-
 
 
 
@@ -90,8 +99,6 @@ nmap <f4> :bd<CR>
 
 
 
-
-
 "******** MISCELLANEOUS SETTINGS
 
 "******** Folding and ease of use for folding.
@@ -102,7 +109,6 @@ nmap <f4> :bd<CR>
 "* 'z-o' = fold open
 "* 'z-c' = fold close
 "noremap <space> za
-
 
 
 "* Hightlight spaces and tabs
@@ -120,6 +126,12 @@ set diffopt+=iwhite
 "  doesn't list "markdown".
 "  This overwrite the default setting. Seems not needed for "new" vim.
 "autocmd BufNewFile,BufRead *.md set filetype=m
+
+
+"* Mouse reporting
+"  Google mentions allows to move cursor, select text (visual mode), scroll,
+"  resize window.
+set mouse=a
 
 
 
