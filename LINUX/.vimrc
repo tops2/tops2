@@ -2,6 +2,8 @@
 "* # HISTORY
 " 2025/08/26 - DPENG
 " - Just discovered `set mouse=a` for mouse mode!
+"   - Added ttymouse setting so can use "Mouse reporting" with TMUX to resize
+"     VIM split panes.
 " - Align Mac vs Linux .vimrc
 "
 "
@@ -132,6 +134,8 @@ set diffopt+=iwhite
 "  Google mentions allows to move cursor, select text (visual mode), scroll,
 "  resize window.
 set mouse=a
-
+"* TMUX: Added in conjunction with "Mouse reporting" so I can use mouse to
+"  resize VIM split panes.
+set ttymouse=xterm2
 
 
