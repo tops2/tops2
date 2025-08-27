@@ -5,6 +5,13 @@
 "   - Added ttymouse setting so can use "Mouse reporting" with TMUX to resize
 "     VIM split panes.
 " - Align Mac vs Linux .vimrc
+" - Adding someone's setting for using `absolute` number for insert mode and
+"   `relative` number for normal mode.
+"
+" 2025/08/27 - DPENG
+" - Block relative number (rnu). Too distracting and doesn't help with debugging
+"   when programs fail and lists line number.
+"
 "
 "
 "*******************************************************************************
@@ -137,5 +144,19 @@ set mouse=a
 "* TMUX: Added in conjunction with "Mouse reporting" so I can use mouse to
 "  resize VIM split panes.
 set ttymouse=xterm2
+
+
+"" Set up automatically switching between absolute & relative numbers depending
+"" on insert/normal mode.
+"" Normal mode: relative number
+"" Insert mode: absolute number
+""* https://jeffkreeftmeijer.com/vim-number/
+""
+"augroup numbertoggle
+"  autocmd!
+"  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+"  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+"augroup END
+
 
 
